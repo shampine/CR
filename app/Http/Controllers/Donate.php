@@ -35,7 +35,7 @@ class Donate extends Controller
     $validator = \Validator::make($input, [
         'name'    => 'required',
         'email'   => 'required|email',
-        'amount'  => 'required|numeric|between:0.01,999.99',
+        'amount'  => 'required|numeric|between:0.01,99999.99',
         'charity' => 'exists:charities,id',
     ]);
 
