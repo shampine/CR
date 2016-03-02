@@ -13,6 +13,8 @@ In the root is a database dump, else you can manually setup the DB.
 3) `php artisan migrate`  
 4) `php artisan db:seed`  
 
+Any errors? Make sure `/storage/logs/` has the correct permissions for Apache2/Laravel to write to file.
+
 The project config holds the url `cr.dev`, you can override this in the `.env` file in the root as well.  
 
 ## deliverables
