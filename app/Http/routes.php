@@ -13,9 +13,14 @@
 
 Route::group(['middleware' => ['web']], function () {
 
-  Route::get('/', function () {
-      return view('donate');
-  });
+  // Donate Routes
+  Route::get('/', ['as' => 'donate', 'uses' => 'Donate@getDonate']);
+  Route::post('/', ['uses' => 'Donate@postDonate']);
+
+  // Reporting Routes
+  Route::get('/reporting/charity', ['as' => 'reporting.charity', 'uses' => 'Reporting@getCharityReport']);
+
+
 
 
 });

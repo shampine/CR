@@ -39,7 +39,8 @@ class CreateDatabase extends Migration
                 donor INT NULL,
                 charity INT NULL,
                 amount DECIMAL(10,2) NOT NULL,
-                created_at DATE NOT NULL,
+                created_at DATETIME NOT NULL,
+                updated_at DATETIME NOT NULL,
                 PRIMARY KEY (id),
                 FOREIGN KEY (donor) REFERENCES donors(id),
                 FOREIGN KEY (charity) REFERENCES charities(id)
@@ -55,8 +56,8 @@ class CreateDatabase extends Migration
      */
     public function down()
     {
+        Schema::drop('donations');
         Schema::drop('donors');
         Schema::drop('charities');
-        Schema::drop('donations');
     }
 }

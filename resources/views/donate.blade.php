@@ -1,30 +1,43 @@
 @include('partials.header')
 
 <div class="container">
-
-    <form>
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" class="form-control" required>
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-2">
+            <h1>Donate</h1>
+            @if(session()->has('error'))
+                <div class="alert alert-danger" role="alert">Invalid input. Please try again.</div>
+            @elseif(session()->has('success'))
+                <div class="alert alert-success" role="alert">Successfully donated!</div>
+            @endif
+            <form method="POST">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input type="text" id="amount" name="amount" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="charity">Charity</label>
+                    <select id="charity" name="charity" class="form-control">
+                        <option disabled selected>Select One</option>
+                        @foreach($charities as $charity)
+                            <option value="{{{ $charity->id }}}">{{{ $charity->name }}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-default">Donate</button>
+            </form>
         </div>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" class="form-control" required>
-        </div>
-        <div class="form-group">
-            <label for="amount">Amount</label>
-            <input type="text" id="amount" name="amount" class="form-control" required>
-        </div>
-        <div class="form-group">
-            <label for="charity">Charity</label>
-            <select id="charity" name="charity" class="form-control">
-                <option disabled selected>Select One</option>
-                <!-- foreach loop of charities -->
-            </select>
-        </div>
-        <button type="submit">Donate</button>
-    </form>
+    </div>
 </div>
+
+@include('partials.reporting')
 
 @include('partials.footer')
