@@ -14,15 +14,19 @@ class CharitiesTableSeeder extends Seeder
       DB::table('charities')->insert([
         [
           "name" => "Kitten Rescue",
-          "ein"  => "135791113"
+          "ein"  => "135791113",
         ],
         [
           "name" => "Red Cross",
-          "ein"  => "171923293"
+          "ein"  => "171923293",
         ],
         [
           "name" => "Salvation Army",
-          "ein"  => "137434751"
+          "ein"  => "137434751",
+        ],
+        [
+          "name" => "American Heart Association",
+          "ein"  => "928383584",
         ],
       ]);
     }

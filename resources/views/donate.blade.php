@@ -21,7 +21,7 @@
                 </div>
                 <div class="form-group">
                     <label for="amount">Amount</label>
-                    <input type="text" id="amount" name="amount" class="form-control" required>
+                    <input type="number" min="0.01" step="0.01" id="amount" name="amount" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="charity">Charity</label>

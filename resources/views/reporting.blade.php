@@ -52,7 +52,7 @@
                   @foreach($dataset as $data)
                     <tr>
                       <th>{{{ $data->id }}}</th>
-                      <th>{{{ $data->amount }}}</th>
+                      <th>${{{ $data->amount }}}</th>
                       <th>{{{ $data->created_at }}}</th>
                       <th>{{{ isset($data->donorName) ? $data->donorName : "-" }}}</th>
                       <th>{{{ isset($data->donorEmail) ? $data->donorEmail : "-" }}}</th>
