@@ -9,7 +9,7 @@ The config is hardcoded into `/config/` for local requirements, either modify th
 URL: `http://cr.dev`  
 Database Name: `cr_dev`  
 Database User: `root`  
-Database Pass: ``
+Database Pass: ` `  
 
 ## setup
 
@@ -26,6 +26,5 @@ Any errors? Make sure `/storage/logs/` has the correct ownership && permissions 
 
 [SQL to Create](https://github.com/shampine/donate/blob/master/database/migrations/2016_02_29_011632_create_database.php)  
 
-[Donate](http://cr.dev/)  
-
-[Reporting](http://cr.dev/reporting)  
+Donate: `/`  
+Reports: `/reporting`  
