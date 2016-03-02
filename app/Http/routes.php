@@ -18,7 +18,7 @@ Route::group(['middleware' => ['web']], function () {
   Route::post('/', ['uses' => 'Donate@postDonate']);
 
   // Reporting Routes
-  Route::get('/reporting/charity', ['as' => 'reporting.charity', 'uses' => 'Reporting@getCharityReport']);
+  Route::get('/reporting', ['as' => 'reporting', 'uses' => 'Reporting@getReporting']);
 
 
 

@@ -38,6 +38,13 @@
     </div>
 </div>
 
-@include('partials.reporting')
+<div class="container">
+  <div class="row">
+      <div class="col-sm-10 col-sm-offset-2">
+        <hr>
+        <a href="/reporting/">[View Reports]</a>
+      </div>
+    </div>
+</div>
 
 @include('partials.footer')

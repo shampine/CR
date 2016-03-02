@@ -14,17 +14,4 @@ class Charities extends Model
    */
   protected $table = 'charities';
 
-
-  /**
-   * Returns a specific charities donations
-   *
-   * @param $id string
-   *
-   * @return array
-   */
-  public static function queryCharityDonations($id)
-  {
-
-  }
-
 }
