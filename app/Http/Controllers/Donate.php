@@ -34,7 +34,7 @@ class Donate extends Controller
 
     $validator = \Validator::make($input, [
         'name'    => 'required',
-        'email'   => 'required|email|unique:donors',
+        'email'   => 'required|email',
         'amount'  => 'required|numeric|between:0.01,999.99',
         'charity' => 'exists:charities,id',
     ]);
@@ -43,15 +43,19 @@ class Donate extends Controller
       return redirect()->back()->with('error', []);
     }
 
-    $donor = Donors::create([
-      'name'  => $input['name'],
-      'email' => $input['email']
-    ]);
+    $donor = Donors::where('email', $input['email'])->first();
+
+    if($donor === null) {
+      $donor = Donors::create([
+        'name'  => $input['name'],
+        'email' => $input['email']
+      ]);
+    }
 
     $donation = Donations::create([
-      'donor' => $donor->id,
+      'donor'   => $donor->id,
       'charity' => $input['charity'],
-      'amount' => $input['amount'],
+      'amount'  => $input['amount'],
     ]);
 
     return redirect()->back()->with('success', []);

@@ -4,6 +4,13 @@
 
 The config is hardcoded into `/config/` for local requirements, either modify them there or use the `.env` file in the root to override.
 
+### defaults:
+
+URL: `http://cr.dev`  
+Database Name: `cr_dev`  
+Database User: `root`  
+Database Pass: ``
+
 ## setup
 
 In the root is a database dump, else you can manually setup the DB.
@@ -13,9 +20,7 @@ In the root is a database dump, else you can manually setup the DB.
 3) `php artisan migrate`  
 4) `php artisan db:seed`  
 
-Any errors? Make sure `/storage/logs/` has the correct permissions for Apache2/Laravel to write to file.
-
-The project config holds the url `cr.dev`, you can override this in the `.env` file in the root as well.  
+Any errors? Make sure `/storage/logs/` has the correct ownership && permissions for Apache2/Laravel to write to file.
 
 ## deliverables
 
