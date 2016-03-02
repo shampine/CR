@@ -11,7 +11,8 @@
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
+Route::group(['middleware' => ['web']], function ()
+{
 
   // Donate Routes
   Route::get('/', ['as' => 'donate', 'uses' => 'Donate@getDonate']);
@@ -19,8 +20,5 @@ Route::group(['middleware' => ['web']], function () {
 
   // Reporting Routes
   Route::get('/reporting', ['as' => 'reporting', 'uses' => 'Reporting@getReporting']);
-
-
-
 
 });
