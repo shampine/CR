@@ -25,8 +25,7 @@
                 </div>
                 <div class="form-group">
                     <label for="charity">Charity</label>
-                    <select id="charity" name="charity" class="form-control">
-                        <option disabled selected>Select One</option>
+                    <select id="charity" name="charity" class="form-control" required>
                         @foreach($charities as $charity)
                             <option value="{{{ $charity->id }}}">{{{ $charity->name }}}</option>
                         @endforeach
